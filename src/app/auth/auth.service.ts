@@ -46,8 +46,7 @@ export class AuthService {
 
     if (!existUser)
       throw new HttpException('Такой пользователь не существует', 404);
-    console.log(password)
-    console.log(existUser.password)
+
     const isPassEquals = await compare(password, existUser.password);
 
     if (!isPassEquals) throw new HttpException('Не правильный пароль!', 404);
